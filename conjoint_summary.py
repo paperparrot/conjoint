@@ -21,3 +21,5 @@ def conjoint_summary(utilities_file, demo_var=None):
     # Loading the data files
     raw_df = pd.read_csv(utilities_file, index_col='Respondent')
     raw_df = raw_df.drop('RLH', axis=1)
+
+    # This is where the function will go
