@@ -24,5 +24,5 @@ def conjoint_summary(utilities_file, demo_var=None):
 
     # This is where the function will go
 
-    
+
     return output_df
