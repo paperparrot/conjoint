@@ -23,3 +23,6 @@ def conjoint_summary(utilities_file, demo_var=None):
     raw_df = raw_df.drop('RLH', axis=1)
 
     # This is where the function will go
+
+    
+    return output_df
