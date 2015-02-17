@@ -10,12 +10,12 @@ importances for the attributes and levels included.
 """
 
 
-def conjoint_summary(utilities_file, demo_var=None):
+def conjoint_utltilites(utilities_file, demo_var=None):
     """
-    Program that does the work of summarizing the conjoint results
-    :param utilities_file: CSV file containing the utility scores. Top row should be labels
-    :param demo_var: CSV file containing the filter valied. Each fi
-    :return: table of the summary importances and average utilities. All scores are indexed.
+    Computes the rescaled utility values for all the attribute levels
+    :param utilities_file: CSV file containing the utility scores. Top row should be labels.
+    :param demo_var: CSV file containing the grouping variables. Top row should be labels.
+    :return: Table of the average utilities. All scores are indexed.
     """
 
     # Loading the data files
@@ -23,5 +23,20 @@ def conjoint_summary(utilities_file, demo_var=None):
     raw_df = raw_df.drop('RLH', axis=1)
 
     # This is where the function will go
+
+    return output_df
+
+
+def conjoint_importance(utilities_file, demo_car=None):
+    """
+    Computes the importances for the attributes of the product
+    :param utilities_file: CSV file containing the utility scores. Top row should be labels
+    :param demo_car: CSV file containing the grouping variables. Top row should be labels.
+    :return:Table of the attribute importances. All scores are indexed.
+    """
+
+    # Loading the data files
+    raw_df = pd.read_csv(utilities_file, index_col='Respondent')
+    raw_df = raw_df.drop('RLH', axis=1)
 
     return output_df
